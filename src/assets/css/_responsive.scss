@@ -1,0 +1,162 @@
+@use './function' as *;
+
+html, body{
+    @media screen and (width > 1024px) and (height < 60vw) {
+        html, body{
+           font-size: 1.856vh; // 862px
+        }
+    }
+
+	@media screen and (width <= 1024px){
+		html, body{
+			font-size: 1.562vw; // 1024px
+		}
+
+		#app{
+			max-width: em(1024);
+		}
+
+		.h1-style{
+			font-size: em(58);
+		}
+		
+		.tx-style-1{
+			font-size: em(14);
+		}
+
+		.content-home{
+			&::after{
+				content: '';
+				width: em(482);
+				height: em(482);
+				filter: blur(em(24));
+			}
+		
+			&__circular-text{
+				width: em(112);
+				transform: translate(em(165), em(170));
+			}
+		}
+
+		.lang-switcher{
+			&__icon{
+				width: em(34);
+				height: em(34);
+		
+				img{
+					width: em(14);
+				}
+			}
+		
+			&__langs--el span{
+				height: em(34);
+				width: em(62);
+			}
+		}
+
+		.logo{
+			left: calc(50% - em(34));
+		
+			a{
+				width: em(68);
+			}
+		}
+
+		.runline-wr{
+			.runline{
+				height: em(48);
+		
+				&__first-half, &__second-half{
+					&--text{
+						font-size: em(40);
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (768px < width <= 1024px) and (height < 75vw) {
+        html, body{
+           font-size: 2.083vh; // 768px
+        }
+    }
+
+	@media screen and (width <= 768px){
+		html, body{
+			font-size: 4.266vw; // 375px
+		}
+
+		#app{
+			max-width: em(375);
+		}
+
+		.h1-style{
+			font-size: em(34);
+		}
+		
+		.tx-style-1{
+			font-size: em(20);
+		}
+
+		.main-navigation{
+			display: none;
+		}
+
+		.content-home{
+			&::after{
+				content: '';
+				width: em(294);
+				height: em(294);
+				filter: blur(em(16));
+			}
+
+			&__title{
+				width: 90%;
+			}
+		
+			&__circular-text{
+				width: em(90);
+				transform: translate(em(75), em(120));
+
+				&::after{
+					width: em(6);
+					height: em(6);
+				}
+			}
+		}
+
+		.logo{
+			left: calc(50% - em(23));
+		
+			a{
+				width: em(46);
+			}
+		}
+
+		.runline-wr{
+			.runline{
+				height: em(32);
+		
+				&__first-half, &__second-half{
+					&--text{
+						font-size: em(28);
+					}
+				}
+			}
+		}
+
+		.burger{
+			display: block;
+		}
+
+		header{
+			padding: em(16) em(16) 0 em(16);
+		}
+	}
+
+	@media screen and (width <= 768px) and (height < 147vw){
+		html, body{
+			font-size: 2.893vh; // 553px
+		 }
+	}
+}

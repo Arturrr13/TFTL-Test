@@ -1,0 +1,31 @@
+<template>
+	<nav class="main-navigation">
+		<ul class="nav-list">
+			<li class="nav-list__el" v-for="item in ['where', 'what', 'who']" :key="item">
+                <router-link class="tx-style-1 tx-hover-anim" rel="nofollow" to="/test" :data-content="item + '?'">
+                    {{ item + '?' }}
+                </router-link>
+            </li>
+		</ul>
+	</nav>
+</template>
+
+<style lang="scss" scoped>
+.nav-list__el{
+	position: absolute;
+
+	&:nth-child(1){
+		transform: rotate(-90deg);
+        left: em(-20);
+	}
+
+	&:nth-child(2){
+        transform: rotate(90deg);
+        right: em(-10);
+    }
+    &:nth-child(3){
+        bottom: em(20);
+        right: calc(50% - em(34));
+    }
+}
+</style>

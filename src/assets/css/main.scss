@@ -1,0 +1,111 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    &:focus {
+        outline: none;
+    }
+}
+
+html, body{
+    height: 100dvh;
+    background: $bg-g;
+    font-family: 'Grtsk Giga', Arial;
+    font-size: 1.1111vw; // 1440px
+    color: $tx-g;
+    overflow: hidden;
+    position: relative;
+}
+
+#app{
+    height: 100%;
+    max-width: em(1440);
+    @include flex(false, center, center, false);
+    margin: 0 auto;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a, button, a:hover, button:hover, details:hover {
+    cursor: pointer;
+}
+
+img, svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+// -------------------------------- Def styles ---------------------------------
+
+.h1-style{
+    @include text($tx-g, em(82), 700, 110%);
+    text-transform: uppercase;
+}
+
+.h3-style{
+    @include text($tx-w, em(46), 600, 110%)
+}
+
+.tx-style-1{
+    @include text($tx-g, em(16), 600, 140%)
+}
+
+.color-main{
+    color: $tx-y;
+}
+
+.color-white{
+    color: $tx-w;
+}
+
+.tx-hover-anim{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 115%;
+
+    &::before {
+        position: absolute;
+        content: attr(data-content);
+        top: 0;
+        left: 0;
+        width: 0;
+        color: $tx-w;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: all .35s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+// -------------------------------- Scroll styles ---------------------------------
+
+::-webkit-scrollbar {
+    width: 5px;
+    position: relative;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #1A1B22; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: $bg-y; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $bg-y; 
+}
