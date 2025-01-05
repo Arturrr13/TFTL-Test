@@ -25,6 +25,7 @@ const runlineResize = () => {
 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
 
 	runline.style.width = `${Math.ceil(d + d * 0.1)}px`
+	runlineEl.style.width = `${Math.ceil(d + d * 0.1)}px`
 	//alert(`${Math.ceil(d + d * 0.1)}, ${window.innerWidth}, ${window.innerHeight}`)
 
 	const angleInRadians = Math.atan(h / w)
@@ -97,6 +98,7 @@ $duration: 30s;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
+			width: 100%;
   		  	//transform: translate(100%, 0);
 
   		  	&--text{
