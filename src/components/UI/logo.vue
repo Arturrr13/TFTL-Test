@@ -16,11 +16,11 @@ onMounted(async () => {
 			<svg id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85" height="46" viewBox="0 0 85 46" fill="none" stroke="black">
 				<defs>
 					<linearGradient id="logo-anim" x1="0" y1="100%" x2="0" y2="0">
-						<stop offset="0" stop-color="#000">
-							<animate :begin="animationStart" dur="3.5s" attributeName="offset" fill="freeze" from="0" to="1" />
+						<stop offset="0" stop-color="black">
+							<animate begin="0s" keyTimes="0 ; .4 ; 1" dur="3.5s" attributeName="offset" fill="freeze" from="0" to="1" />
 						</stop>
-						<stop offset="0" stop-color="#BEBEBE">
-							<animate :begin="animationStart" dur="3.5s" attributeName="offset" fill="freeze" from="0" to="1" />
+						<stop offset="0" stop-color="red">
+							<animate begin="0s" keyTimes="0 ; .4 ; 1" dur="3.5s" attributeName="offset" fill="freeze" from="0" to="1" />
 						</stop>
 					</linearGradient>
 				</defs>

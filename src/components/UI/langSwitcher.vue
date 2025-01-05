@@ -35,10 +35,10 @@ const changeLang = (lang) => {
 	width: fit-content;
 	overflow: hidden;
 	transition: grid-template-columns ease-in-out .35s;
-	z-index: 5;
 
 	&:hover{
 		grid-template-columns: 1fr auto;
+		z-index: 5;
 
 		.lang-switcher__icon{
 			cursor: pointer;
