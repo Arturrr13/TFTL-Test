@@ -55,15 +55,15 @@ const runlineResize = () => {
 window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
 window.addEventListener("load", (event) => {
-	// alert("hey!")
-	console.log(1)
+	alert("hey!")
+	// console.log(1)
 })
 onMounted(async () => {
 	//runlineResize()
 	setTimeout(() => {
 		runlineResize()
-		//alert("hey!2")
-		console.log(2)
+		alert("hey!2")
+		//console.log(2)
 	}, 2500)
 })
 </script>
