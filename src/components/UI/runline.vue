@@ -50,7 +50,7 @@ const runlineResize = () => {
 
 window.addEventListener('resize', runlineResize)
 
-onMounted(() => setTimeout(() => runlineResize(), 100))
+onMounted(() => setTimeout(() => runlineResize(), 1000))
 </script>
 
 <template>
