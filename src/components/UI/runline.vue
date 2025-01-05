@@ -37,6 +37,8 @@ onMounted(async () => {
 	//runlineResize()
 	setTimeout(() => runlineResize(), 1000)
 })
+
+setTimeout(() => runlineResize(), 1000)
 </script>
 
 <template>
