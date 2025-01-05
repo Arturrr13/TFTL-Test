@@ -19,7 +19,7 @@ onMounted(async () => {
 						<stop offset="0" stop-color="black">
 							<animate begin="0s" keyTimes="0 ; .4 ; 1" dur="3.5s" attributeName="offset" fill="freeze" from="0" to="1" />
 						</stop>
-						<stop offset="0" stop-color="red">
+						<stop offset="0" stop-color="#BEBEBE">
 							<animate begin="0s" keyTimes="0 ; .4 ; 1" dur="3.5s" attributeName="offset" fill="freeze" from="0" to="1" />
 						</stop>
 					</linearGradient>

@@ -4,9 +4,7 @@ import { onMounted } from 'vue'
 const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerHTML.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
-	console.log(runlineEl, stringSize)
-
-	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY '.repeat(timesToRepeat)
+	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
 
 const runlineResize = async () => {
@@ -31,13 +29,6 @@ const runlineResize = async () => {
 		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
 	}
 }
-
-// document.addEventListener('DOMContentLoaded', () => {
-// 	window.addEventListener('resize', runlineResize())
-// 	window.addEventListener('orientationchange', runlineResize())
-// 	runlineResize()
-// 	setTimeout(() => runlineResize(), 1000)
-// })
 
 onMounted(async () => {
 	window.addEventListener('resize', runlineResize)
@@ -89,7 +80,6 @@ $duration: 30s;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
-  		  	//width: 97%;
   		  	transform: translate(100%, 0);
 
   		  	&--text{
@@ -103,12 +93,11 @@ $duration: 30s;
 			}
   		}
 
-		  &__first-half{
+		&__first-half{
 			flex-shrink: 0;
-		  }
+		}
 
 		&__second-half{
-			//flex-shrink: 1;
 			animation: 30s ticker 15s infinite linear forwards;
 		}
 	}
