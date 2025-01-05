@@ -30,7 +30,7 @@ const addText = (runlineText, runlineHalf, runlineEl) => {
 }
 
 const runlineResize = () => {
-	const w = window.innerWidth, h = window.innerHeight
+	const w = document.body.clientWidth, h = document.body.clientHeight
 	const runline = document.querySelector('.runline-wr')
 	const runlineEl = document.querySelector('.runline')
 	const runlineHalf = document.querySelectorAll('.runline__first-half')
