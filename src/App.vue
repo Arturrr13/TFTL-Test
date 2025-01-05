@@ -20,44 +20,44 @@ const parallax = (e) => {
 
 document.querySelector('body').addEventListener('mousemove', parallax)
 
-import { onMounted } from 'vue'
+// import { onMounted } from 'vue'
 
-const addText = (runlineText, runlineHalf, runlineEl) => {
-	const stringSize = runlineText.clientWidth / runlineText.innerHTML.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
-	const timesToRepeat = Math.ceil(runlineEl / stringSize)
+// const addText = (runlineText, runlineHalf, runlineEl) => {
+// 	const stringSize = runlineText.clientWidth / runlineText.innerHTML.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
+// 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 
-	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY '.repeat(timesToRepeat)
-}
+// 	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY '.repeat(timesToRepeat)
+// }
 
-const runlineResize = () => {
-	const w = document.body.clientWidth, h = document.body.clientHeight
-	const runline = document.querySelector('.runline-wr')
-	const runlineEl = document.querySelector('.runline')
-	const runlineHalf = document.querySelectorAll('.runline__first-half')
-	const runlineText = document.querySelectorAll('.runline__first-half--text')
-	const runlineHalfSecond = document.querySelectorAll('.runline__second-half')
-	const runlineTextSecond = document.querySelectorAll('.runline__second-half--text')
+// const runlineResize = () => {
+// 	const w = document.body.clientWidth, h = document.body.clientHeight
+// 	const runline = document.querySelector('.runline-wr')
+// 	const runlineEl = document.querySelector('.runline')
+// 	const runlineHalf = document.querySelectorAll('.runline__first-half')
+// 	const runlineText = document.querySelectorAll('.runline__first-half--text')
+// 	const runlineHalfSecond = document.querySelectorAll('.runline__second-half')
+// 	const runlineTextSecond = document.querySelectorAll('.runline__second-half--text')
 
-	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
+// 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
 
-	runline.style.width = `${d + d * 0.1}px`
+// 	runline.style.width = `${d + d * 0.1}px`
 
-	const angleInRadians = Math.atan(h / w)
-	const angleInDegrees = angleInRadians * (180 / Math.PI)
-	runline.style.rotate = `-${angleInDegrees}deg`
+// 	const angleInRadians = Math.atan(h / w)
+// 	const angleInDegrees = angleInRadians * (180 / Math.PI)
+// 	runline.style.rotate = `-${angleInDegrees}deg`
 
-	for(let i = 0; i < 2; i++){
-		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
-		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
-	}
-}
+// 	for(let i = 0; i < 2; i++){
+// 		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
+// 		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
+// 	}
+// }
 
-onMounted(async () => {
-	window.addEventListener('resize', runlineResize)
-	window.addEventListener('orientationchange', runlineResize)
-	//runlineResize()
-	setTimeout(() => runlineResize(), 1000)
-})
+// onMounted(async () => {
+// 	window.addEventListener('resize', runlineResize)
+// 	window.addEventListener('orientationchange', runlineResize)
+// 	//runlineResize()
+// 	setTimeout(() => runlineResize(), 1000)
+// })
 </script>
 
 <template>
