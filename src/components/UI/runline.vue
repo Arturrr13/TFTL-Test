@@ -104,7 +104,7 @@ $duration: 30s;
 				font-style: italic;
 				text-transform: uppercase;
 				opacity: 0.1;
-				white-space: nowrap;
+				//white-space: nowrap;
 				color: transparent;
 				-webkit-text-stroke: em(1) $tx-g;
 			}
