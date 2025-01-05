@@ -20,13 +20,13 @@ const parallax = (e) => {
 
 document.querySelector('body').addEventListener('mousemove', parallax)
 
-import { onMounted, onUpdated } from 'vue'
+import { onMounted } from 'vue'
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerHTML.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 
-	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY '.repeat(timesToRepeat)
+	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
 
 const runlineResize = () => {

@@ -7,12 +7,12 @@
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
 				<p class="runline__first-half--text">
-					Fesfsefsfesfe sef sefsefsefsef sef sefs fsef sfgsf sfsfsfsfsfsfsfsf s fsf sfsff sfgsf sfsfsfsfsfsfsfsf s fsf sfsf
+					FULL-CYCLE EVENT AGENCY
 				</p>
 			</div>
 			<div class="runline__second-half">
 				<p class="runline__second-half--text">
-					Fsef sefse fse fsf sfesfesfesefsefsefsfeseffsfsf f sfgsf sfsfsfsfsfsfsfsf s fsf sfsff sfgsf sfsfsfsfsfsfsfsf s fsf sfsf
+					FULL-CYCLE EVENT AGENCY
 				</p>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 $duration: 30s;
 
 .runline-wr{
-	width: em(1800);
+	width: 120%;
 	position: absolute;
 	rotate: -30deg;
 	@include flex(column, false, false, em(15));
