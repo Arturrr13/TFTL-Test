@@ -59,14 +59,14 @@ onMounted(async () => {
 	<div class="runline-wr">
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
-				<span class="runline__first-half--text">
+				<nobr class="runline__first-half--text">
 					{{ text }}
-				</span>
+				</nobr>
 			</div>
 			<div class="runline__second-half">
-				<span class="runline__second-half--text">
+				<nobr class="runline__second-half--text">
 					{{ text }}
-				</span>
+				</nobr>
 			</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ $duration: 30s;
 				font-style: italic;
 				text-transform: uppercase;
 				opacity: 0.1;
-				//white-space: nowrap;
+				// white-space: nowrap;
 				color: transparent;
 				-webkit-text-stroke: em(1) $tx-g;
 			}
