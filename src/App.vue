@@ -29,7 +29,7 @@ const addText = (runlineText, runlineHalf, runlineEl) => {
 	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY '.repeat(timesToRepeat)
 }
 
-const runlineResize = async () => {
+const runlineResize = () => {
 	const w = window.innerWidth, h = window.innerHeight
 	const runline = document.querySelector('.runline-wr')
 	const runlineEl = document.querySelector('.runline')
@@ -55,7 +55,7 @@ const runlineResize = async () => {
 onMounted(async () => {
 	window.addEventListener('resize', runlineResize)
 	window.addEventListener('orientationchange', runlineResize)
-	//runlineResize()
+	runlineResize()
 	setTimeout(() => runlineResize(), 1000)
 })
 </script>
