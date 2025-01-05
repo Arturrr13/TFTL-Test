@@ -4,7 +4,7 @@ import { onMounted, ref } from 'vue'
 const text = ref('FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY')
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
-	const stringSize = 30 * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
+	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 	console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 	//runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
@@ -41,9 +41,9 @@ window.addEventListener('orientationchange', runlineResize)
 // })
 onMounted(async () => {
 	runlineResize()
-	// setTimeout(() => {
-	// 	runlineResize()
-	// }, 10)
+	setTimeout(() => {
+		runlineResize()
+	}, 10)
 
 	// const interval = setInterval(() => {
 	// 	runlineResize()
@@ -90,7 +90,6 @@ $duration: 30s;
 
 		&__first-half, &__second-half{
   		  	position: absolute;
-			width: 100%;
   		  	top: 0;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
@@ -109,7 +108,7 @@ $duration: 30s;
   		}
 
 		&__first-half{
-			flex-shrink: 0;
+			//flex-shrink: 0;
 		}
 
 		&__second-half{
