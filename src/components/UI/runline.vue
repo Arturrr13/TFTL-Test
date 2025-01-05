@@ -4,14 +4,14 @@ import { onMounted } from 'vue'
 const removeText = (runlineText, runlineHalf) => {
 	let addExtraLetters = ''
 
-	if(runlineHalf.clientWidth < runlineText.clientWidth){
+	//if(runlineHalf.clientWidth < runlineText.clientWidth){
 		const letterSize = runlineText.clientWidth / runlineText.innerHTML.split('').length
 		const extraLetters = -((runlineText.clientWidth - runlineHalf.clientWidth) / letterSize)
 		const newText = runlineText.innerHTML.slice(0, Math.floor(extraLetters))
 		addExtraLetters = runlineText.innerHTML.slice(Math.floor(extraLetters))
 	
 		runlineText.innerHTML = newText
-	}
+	//}
 
 	return { addExtraLetters }
 }
@@ -42,12 +42,10 @@ const runlineResize = async () => {
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
 	runline.style.rotate = `-${angleInDegrees}deg`
 
-	// for(let i = 0; i < 2; i++){
-	// 	const { addExtraLetters } = addText(runlineText[i], runlineHalf[i])
-	// 	addText(runlineTextSecond[i], runlineHalfSecond[i], addExtraLetters)
-	// }
-	const { addExtraLetters } = addText(runlineText[0], runlineHalf[0])
-	addText(runlineTextSecond[0], runlineHalfSecond[0], addExtraLetters)
+	for(let i = 0; i < 2; i++){
+		const { addExtraLetters } = addText(runlineText[i], runlineHalf[i])
+		addText(runlineTextSecond[i], runlineHalfSecond[i], addExtraLetters)
+	}
 }
 
 // document.addEventListener('DOMContentLoaded', () => {
