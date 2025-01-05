@@ -82,7 +82,7 @@ $duration: 30s;
 		width: 100%;
 		height: em(60);
 		position: relative;
-		display: flex;
+		@include flex(false, center, space-between, false);
 
 		&:nth-child(1){
 			rotate: 180deg;
@@ -90,6 +90,7 @@ $duration: 30s;
 
 		&__first-half, &__second-half{
   		  	position: absolute;
+			width: 100%;
   		  	top: 0;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
