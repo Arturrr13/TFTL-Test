@@ -2,10 +2,11 @@
 import { ref, onMounted } from 'vue'
 
 const animationStart = ref('indefinite')
-//onMounted(async () => animationStart.value = '0s')
 
-document.addEventListener('DOMContentLoaded', () => {
-	setTimeout(() => animationStart.value = '0s', 1000)
+onMounted(async () => {
+  setTimeout(() => {
+    animationStart.value = '0s'
+  }, 1000)
 })
 </script>
 
