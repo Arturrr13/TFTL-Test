@@ -64,7 +64,7 @@ onMounted(async () => {
 		runlineResize()
 		//alert("hey!2")
 		console.log(2)
-	}, 500)
+	}, 2500)
 })
 </script>
 
