@@ -35,7 +35,7 @@ onMounted(async () => {
 	window.addEventListener('resize', runlineResize)
 	window.addEventListener('orientationchange', runlineResize)
 	//runlineResize()
-	setTimeout(() => runlineResize(), 100)
+	setTimeout(() => runlineResize(), 1000)
 })
 </script>
 
