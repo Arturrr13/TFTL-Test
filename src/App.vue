@@ -19,55 +19,6 @@ const parallax = (e) => {
 }
 
 document.querySelector('body').addEventListener('mousemove', parallax)
-
-import { onMounted } from 'vue'
-
-const addText = (runlineText, runlineHalf, runlineEl) => {
-	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
-	const timesToRepeat = Math.ceil(runlineEl / stringSize)
-
-	runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
-}
-
-const runlineResize = () => {
-	const w = window.innerWidth, h = window.innerHeight
-	const runline = document.querySelector('.runline-wr')
-	const runlineEl = document.querySelector('.runline')
-	const runlineHalf = document.querySelectorAll('.runline__first-half')
-	const runlineText = document.querySelectorAll('.runline__first-half--text')
-	const runlineHalfSecond = document.querySelectorAll('.runline__second-half')
-	const runlineTextSecond = document.querySelectorAll('.runline__second-half--text')
-
-	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
-
-	runline.style.width = `${d + d * 0.1}px`
-
-	const angleInRadians = Math.atan(h / w)
-	const angleInDegrees = angleInRadians * (180 / Math.PI)
-	runline.style.rotate = `-${angleInDegrees}deg`
-
-	for(let i = 0; i < 2; i++){
-		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
-		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
-	}
-}
-
-window.addEventListener('resize', runlineResize)
-window.addEventListener('orientationchange', runlineResize)
-// window.addEventListener("load", (event) => {
-// 	alert("hey!")
-// })
-onMounted(async () => {
-	//runlineResize()
-	setTimeout(() => {
-		runlineResize()
-	}, 10)
-
-	const interval = setInterval(() => {
-		runlineResize()
-		console.log('+')
-	}, 1050)
-})
 </script>
 
 <template>
