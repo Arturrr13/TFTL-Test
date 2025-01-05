@@ -48,11 +48,13 @@ const runlineResize = () => {
 	}
 }
 
-window.addEventListener('resize', runlineResize())
+document.addEventListener('DOMContentLoaded', () => {
+	window.addEventListener('resize', runlineResize())
+	runlineResize()
+	setTimeout(() => runlineResize(), 1000)
+})
 
-document.addEventListener('DOMContentLoaded', runlineResize());
-
-onMounted(async () => setTimeout(() => runlineResize(), 1000))
+onMounted(async () => runlineResize())
 </script>
 
 <template>
