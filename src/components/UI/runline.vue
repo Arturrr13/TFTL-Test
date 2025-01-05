@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
-const text = ref('F')
+const text = ref('FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY')
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = 30 * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
@@ -28,10 +28,10 @@ const runlineResize = () => {
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
 	runline.style.rotate = `-${angleInDegrees}deg`
 
-	for(let i = 0; i < 2; i++){
-		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
-		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
-	}
+	// for(let i = 0; i < 2; i++){
+	// 	addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
+	// 	addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
+	// }
 }
 
 window.addEventListener('resize', runlineResize)
