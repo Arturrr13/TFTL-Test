@@ -26,7 +26,7 @@ const addText = (runlineText, runlineHalf, extraLettersForSecond = false) => {
 	return removeText(runlineText, runlineHalf)
 }
 
-const runlineResize = () => {
+const runlineResize = async () => {
 	const w = window.innerWidth, h = window.innerHeight
 	const runline = document.querySelector('.runline-wr')
 	const runlineHalf = document.querySelectorAll('.runline__first-half')
@@ -43,19 +43,24 @@ const runlineResize = () => {
 	runline.style.rotate = `-${angleInDegrees}deg`
 
 	for(let i = 0; i < 2; i++){
-		const { addExtraLetters } = addText(runlineText[i], runlineHalf[i])
-		addText(runlineTextSecond[i], runlineHalfSecond[i], addExtraLetters)
+		const { addExtraLetters } = await addText(runlineText[i], runlineHalf[i])
+		await addText(runlineTextSecond[i], runlineHalfSecond[i], addExtraLetters)
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	window.addEventListener('resize', runlineResize())
-	window.addEventListener('orientationchange', runlineResize())
+// document.addEventListener('DOMContentLoaded', () => {
+// 	window.addEventListener('resize', runlineResize())
+// 	window.addEventListener('orientationchange', runlineResize())
+// 	runlineResize()
+// 	setTimeout(() => runlineResize(), 1000)
+// })
+
+onMounted(async () => {
+	window.addEventListener('resize', runlineResize)
+	window.addEventListener('orientationchange', runlineResize)
 	runlineResize()
 	setTimeout(() => runlineResize(), 1000)
 })
-
-//onMounted(async () => runlineResize())
 </script>
 
 <template>
@@ -63,12 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
 				<p class="runline__first-half--text">
-					FULL
+					FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY
 				</p>
 			</div>
 			<div class="runline__second-half">
 				<p class="runline__second-half--text">
-					FULL
+					FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY
 				</p>
 			</div>
 		</div>
