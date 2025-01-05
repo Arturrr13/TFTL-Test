@@ -25,7 +25,7 @@ const runlineResize = () => {
 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
 
 	runline.style.width = `${Math.ceil(d + d * 0.1)}px`
-	alert(Math.ceil(d + d * 0.1))
+	alert(`${Math.ceil(d + d * 0.1)}, ${window.innerWidth}, ${window.innerHeight}`)
 
 	const angleInRadians = Math.atan(h / w)
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
@@ -76,7 +76,7 @@ onMounted(async () => {
 $duration: 30s;
 
 .runline-wr{
-	width: 120px;
+	width: 10px;
 	position: absolute;
 	rotate: -30deg;
 	@include flex(column, false, false, em(15));
@@ -97,7 +97,7 @@ $duration: 30s;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
-  		  	transform: translate(100%, 0);
+  		  	//transform: translate(100%, 0);
 
   		  	&--text{
 				@include text($tx-g, em(52), 700, 110%);
