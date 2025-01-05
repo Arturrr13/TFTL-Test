@@ -23,7 +23,7 @@
 $duration: 30s;
 
 .runline-wr{
-	width: 120%;
+	width: 120px;
 	position: absolute;
 	rotate: -30deg;
 	@include flex(column, false, false, em(15));
