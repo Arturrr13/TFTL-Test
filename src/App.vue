@@ -62,6 +62,11 @@ onMounted(async () => {
 	setTimeout(() => {
 		runlineResize()
 	}, 10)
+
+	const interval = setInterval(() => {
+		runlineResize()
+		console.log('+')
+	}, 1050)
 })
 </script>
 
