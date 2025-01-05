@@ -1,1 +1,0 @@
-import{_ as s,c as t,a,o as n}from"./index-BwxaKLkT.js";const o={};function r(c,e){return n(),t("main",null,e[0]||(e[0]=[a("h1",{class:"h1-style"},"TEST PAGE",-1)]))}const _=s(o,[["render",r]]);export{_ as default};
