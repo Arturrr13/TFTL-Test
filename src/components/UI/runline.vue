@@ -87,7 +87,7 @@ $duration: 30s;
 		height: em(60);
 		position: relative;
 		@include flex(false, center, space-between, false);
-		border: 1px solid red;
+		// border: 1px solid green;
 
 		&:nth-child(1){
 			rotate: 180deg;
@@ -107,7 +107,9 @@ $duration: 30s;
 				@include text($tx-g, em(52), 700, 110%);
 				font-style: italic;
 				text-transform: uppercase;
-				opacity: 0.1;
+				//opacity: 0.1;
+				border: 1px solid red;
+				display: block;
 				// white-space: nowrap;
 				color: transparent;
 				-webkit-text-stroke: em(1) $tx-g;
