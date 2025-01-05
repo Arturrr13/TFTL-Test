@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 const animationStart = ref('indefinite')
-onMounted(() => animationStart.value = '0s')
+onMounted(async () => animationStart.value = '0s')
 </script>
 
 <template>
