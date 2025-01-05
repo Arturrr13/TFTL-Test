@@ -4,7 +4,7 @@ import { onMounted, ref } from 'vue'
 const text = ref('F')
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
-	const stringSize = 54 * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
+	const stringSize = 32 * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 	console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 	//runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
