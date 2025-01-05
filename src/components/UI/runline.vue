@@ -49,10 +49,10 @@ const runlineResize = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	window.addEventListener('resize', runlineResize)
-	window.addEventListener('orientationchange', runlineResize)
-	//runlineResize()
-	setTimeout(() => runlineResize(), 100)
+	window.addEventListener('resize', runlineResize())
+	window.addEventListener('orientationchange', runlineResize())
+	runlineResize()
+	setTimeout(() => runlineResize(), 1000)
 })
 
 //onMounted(async () => runlineResize())
