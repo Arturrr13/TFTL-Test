@@ -87,6 +87,7 @@ $duration: 30s;
 		height: em(60);
 		position: relative;
 		@include flex(false, center, space-between, false);
+		border: 1px solid red;
 
 		&:nth-child(1){
 			rotate: 180deg;
@@ -98,8 +99,9 @@ $duration: 30s;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
-			width: 100%;
-  		  	//transform: translate(100%, 0);
+			//width: 100%;
+			border: 1px solid blue;
+  		  	transform: translate(100%, 0);
 
   		  	&--text{
 				@include text($tx-g, em(52), 700, 110%);
