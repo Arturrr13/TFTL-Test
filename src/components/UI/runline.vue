@@ -48,7 +48,9 @@ const runlineResize = () => {
 	}
 }
 
-window.addEventListener('resize', runlineResize)
+window.addEventListener('resize', runlineResize())
+
+document.addEventListener('DOMContentLoaded', runlineResize());
 
 onMounted(async () => setTimeout(() => runlineResize(), 1000))
 </script>
