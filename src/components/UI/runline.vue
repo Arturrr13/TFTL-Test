@@ -50,7 +50,7 @@ const runlineResize = () => {
 
 window.addEventListener('resize', runlineResize)
 
-onMounted(async () => setTimeout(() => runlineResize(), 5000))
+onMounted(async () => setTimeout(() => runlineResize(), 1000))
 </script>
 
 <template>
@@ -92,7 +92,7 @@ $duration: 30s;
   		  	position: absolute;
   		  	top: 0;
   		  	right: 0;
-  		  	animation: ticker $duration infinite linear forwards;
+  		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
   		  	width: 97%;
   		  	transform: translate(100%, 0);
@@ -109,7 +109,7 @@ $duration: 30s;
   		}
 
 		&__second-half{
-			animation: $duration ticker $duration/2 infinite linear forwards;
+			animation: 30s ticker 15s infinite linear forwards;
 		}
 	}
 }
