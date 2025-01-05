@@ -62,7 +62,7 @@ onMounted(async () => {
 	setTimeout(() => {
 		runlineResize()
 		//alert("hey!2")
-	}, 1000)
+	}, 500)
 })
 </script>
 
