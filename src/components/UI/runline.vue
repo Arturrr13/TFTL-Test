@@ -6,14 +6,14 @@
 	<div class="runline-wr">
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
-				<p class="runline__first-half--text">
-					FULL-CYCLE EVENT AGENCY
-				</p>
+				<span class="runline__first-half--text">
+					F
+				</span>
 			</div>
 			<div class="runline__second-half">
-				<p class="runline__second-half--text">
-					FULL-CYCLE EVENT AGENCY
-				</p>
+				<span class="runline__second-half--text">
+					F
+				</span>
 			</div>
 		</div>
 	</div>

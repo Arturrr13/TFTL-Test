@@ -23,10 +23,10 @@ document.querySelector('body').addEventListener('mousemove', parallax)
 import { onMounted } from 'vue'
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
-	const stringSize = runlineText.clientWidth / runlineText.innerHTML.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
+	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 
-	runlineText.innerHTML = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
+	runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
 
 const runlineResize = () => {
@@ -54,14 +54,16 @@ const runlineResize = () => {
 
 window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
-// window.addEventListener("load", (event) => {
-// 	alert("hey!")
-// })
+window.addEventListener("load", (event) => {
+	// alert("hey!")
+	console.log(1)
+})
 onMounted(async () => {
 	//runlineResize()
 	setTimeout(() => {
 		runlineResize()
 		//alert("hey!2")
+		console.log(2)
 	}, 500)
 })
 </script>
