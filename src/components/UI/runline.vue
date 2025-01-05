@@ -6,7 +6,9 @@ const text = ref('FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY')
 const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
-	console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
+	//alert(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
+	console.log('lol')
+	//alert("hey!")
 	//runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
@@ -22,7 +24,8 @@ const runlineResize = () => {
 
 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
 
-	runline.style.width = `${d + d * 0.1}px`
+	runline.style.width = `${Math.ceil(d + d * 0.1)}px`
+	alert(Math.ceil(d + d * 0.1))
 
 	const angleInRadians = Math.atan(h / w)
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
@@ -41,9 +44,9 @@ window.addEventListener('orientationchange', runlineResize)
 // })
 onMounted(async () => {
 	runlineResize()
-	setTimeout(() => {
-		runlineResize()
-	}, 10)
+	// setTimeout(() => {
+	// 	runlineResize()
+	// }, 10)
 
 	// const interval = setInterval(() => {
 	// 	runlineResize()
