@@ -10,7 +10,7 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('DOMContentLoaded', () => {
         const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerHTML.split('').length * 24 // 24 def size of string "FULL-CYCLE EVENT AGENCY "
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
@@ -19,7 +19,7 @@
 }
 
 const runlineResize = () => {
-	const w = document.body.clientWidth, h = document.body.clientHeight
+	const w = window.innerWidth, h = window.innerHeight
 	const runline = document.querySelector('.runline-wr')
 	const runlineEl = document.querySelector('.runline')
 	const runlineHalf = document.querySelectorAll('.runline__first-half')
