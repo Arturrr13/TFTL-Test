@@ -7,12 +7,12 @@
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
 				<p class="runline__first-half--text">
-					F
+					Fesfsefsfesfe sef sefsefsefsef sef sefs fsef sfgsf sfsfsfsfsfsfsfsf s fsf sfsff sfgsf sfsfsfsfsfsfsfsf s fsf sfsf
 				</p>
 			</div>
 			<div class="runline__second-half">
 				<p class="runline__second-half--text">
-					F
+					Fsef sefse fse fsf sfesfesfesefsefsefsfeseffsfsf f sfgsf sfsfsfsfsfsfsfsf s fsf sfsff sfgsf sfsfsfsfsfsfsfsf s fsf sfsf
 				</p>
 			</div>
 		</div>
