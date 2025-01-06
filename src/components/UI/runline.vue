@@ -8,7 +8,7 @@ const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 	//console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
-	//runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
+
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
 
@@ -38,14 +38,11 @@ const runlineResize = () => {
 
 window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
-// window.addEventListener("load", (event) => {
-// 	alert("hey!")
-// })
 
-watch(() => size.value, (value, old) => {
-    runlineResize()
-	console.log(value, old)
-})
+// watch(() => size.value, (value, old) => {
+//     runlineResize()
+// 	console.log(value, old)
+// })
 
 // document.addEventListener('DOMContentLoaded', () => {
 // 	runlineResize()
@@ -59,6 +56,9 @@ onMounted(async () => {
 	setTimeout(() => {
 		runlineResize()
 	}, 1050)
+	setTimeout(() => {
+		runlineResize()
+	}, 2050)
 })
 </script>
 
