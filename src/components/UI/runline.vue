@@ -2,12 +2,10 @@
 import { onMounted, ref } from 'vue'
 
 const text = ref('FULL-CYCLE EVENT AGENCY')
-const size = ref(0)
 
 const addText = (runlineText, runlineHalf, runlineEl, firstSecond) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
-	//console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 	if(firstSecond){
@@ -46,9 +44,7 @@ const runlineResize = () => {
 	const runlineTextSecond = document.querySelectorAll('.runline__second-half--text')
 
 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
-
 	runline.style.width = `${d + d * 0.1}px`
-	size.value = d + d * 0.1
 
 	const angleInRadians = Math.atan(h / w)
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
@@ -64,10 +60,10 @@ window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
 
 onMounted(async () => {
-	runlineResize()
+	// runlineResize()
 	setTimeout(() => {
 		runlineResize()
-	}, 1050)
+	}, 50)
 })
 </script>
 
@@ -136,9 +132,9 @@ $duration: 30s;
 	}
 }
 
-@keyframes ticker {
-  	0% { transform: translate(100%, 0) }
-  	50% { transform: translate(0, 0) }
-  	100% { transform: translate(-100%, 0) }
-}
+// @keyframes ticker {
+//   	0% { transform: translate(100%, 0) }
+//   	50% { transform: translate(0, 0) }
+//   	100% { transform: translate(-100%, 0) }
+// }
 </style>
