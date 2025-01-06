@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const text = ref('FULL-CYCLE EVENT AGENCY')
 const size = ref(0)
@@ -10,6 +10,15 @@ const addText = (runlineText, runlineHalf, runlineEl) => {
 	//console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
+
+	// wheel.animate([
+	//   	{ transform: `rotate(${lastSpin.value}deg)`},
+	//   	{ transform: `rotate(${rotate.value}deg)`},
+	// ], {
+	//   	duration: 1500,
+	//   	fill: 'both',
+	//   	easing: 'ease-in-out'
+	// })
 }
 
 const runlineResize = () => {
@@ -39,20 +48,8 @@ const runlineResize = () => {
 window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
 
-// watch(() => size.value, (value, old) => {
-//     runlineResize()
-// 	console.log(value, old)
-// })
-
-// document.addEventListener('DOMContentLoaded', () => {
-// 	runlineResize()
-// 	setTimeout(() => {
-// 		runlineResize()
-// 		//alert("hey!")
-// 	}, 2050)
-// })
 onMounted(async () => {
-	//runlineResize()
+	runlineResize()
 	setTimeout(() => {
 		runlineResize()
 	}, 1050)
@@ -102,7 +99,6 @@ $duration: 30s;
   		  	position: absolute;
   		  	top: 0;
   		  	right: 0;
-  		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
   		  	transform: translate(100%, 0);
 
@@ -119,6 +115,7 @@ $duration: 30s;
 
 		&__first-half{
 			flex-shrink: 0;
+			animation: ticker 30s infinite linear forwards;
 		}
 
 		&__second-half{
