@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	runlineResize()
 	setTimeout(() => {
 		runlineResize()
-		alert("hey!")
+		//alert("hey!")
 	}, 2050)
 })
 // onMounted(async () => {
