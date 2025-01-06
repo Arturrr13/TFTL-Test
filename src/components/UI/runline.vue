@@ -1,38 +1,31 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
 
 const text = ref('FULL-CYCLE EVENT AGENCY')
 const opacity = ref(0)
+
+const runlineAnimation = (el, duration, delay) => {
+	el.animate([
+		{ transform: `translate(100%, 0)` },
+		  { transform: `translate(0, 0)` },
+		  { transform: `translate(-100%, 0)` }
+	], {
+		duration: duration,
+		delay: delay,
+		iterations: Infinity,
+		fill: 'both',
+		easing: 'linear'
+	})
+}
 
 const addText = (runlineText, runlineHalf, runlineEl, firstSecond) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
-	if(firstSecond){
-		runlineHalf.animate([
-			{ transform: `translate(100%, 0)` },
-			  { transform: `translate(0, 0)` },
-			  { transform: `translate(-100%, 0)` }
-		], {
-			duration: 30000,
-			iterations: Infinity,
-			fill: 'both',
-			easing: 'linear'
-		})
-	} else {
-		runlineHalf.animate([
-			{ transform: `translate(100%, 0)` },
-			  { transform: `translate(0, 0)` },
-			  { transform: `translate(-100%, 0)` }
-		], {
-			duration: 30000,
-			delay: 15000,
-			iterations: Infinity,
-			fill: 'both',
-			easing: 'linear'
-		})
-	}
+	
+	if(firstSecond) runlineAnimation(runlineHalf, 30000, 0)
+	else runlineAnimation(runlineHalf, 30000, 15000)
 }
 
 const runlineResize = () => {
@@ -66,6 +59,11 @@ onMounted(async () => {
 		runlineResize()
 		opacity.value = 1
 	}, 1050)
+})
+
+onUnmounted(() => {
+	window.removeEventListener('resize', runlineResize)
+	window.removeEventListener('orientationchange', runlineResize)
 })
 </script>
 
