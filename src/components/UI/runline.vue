@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 
 const text = ref('FULL-CYCLE EVENT AGENCY')
+const opacity = ref(0)
 
 const addText = (runlineText, runlineHalf, runlineEl, firstSecond) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
@@ -63,12 +64,13 @@ onMounted(async () => {
 	runlineResize()
 	setTimeout(() => {
 		runlineResize()
-	}, 50)
+		opacity.value = 1
+	}, 1050)
 })
 </script>
 
 <template>
-	<div class="runline-wr">
+	<div class="runline-wr" :style="{ opacity: opacity }">
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
 				<span class="runline__first-half--text">
