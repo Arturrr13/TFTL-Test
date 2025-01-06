@@ -2,8 +2,8 @@
 	<nav class="main-navigation">
 		<ul class="nav-list">
 			<li class="nav-list__el" v-for="item in ['where', 'what', 'who']" :key="item">
-                <router-link class="tx-style-1 tx-hover-anim" rel="nofollow" to="/test" :data-content="item + '?'">
-                    {{ item + '?' }}
+                <router-link class="tx-style-1 tx-hover-anim" rel="nofollow" to="/test" :data-content="$t(`nav.${item}`) + '?'">
+                    {{ $t(`nav.${item}`) + '?' }}
                 </router-link>
             </li>
 		</ul>
@@ -15,13 +15,15 @@
 	position: absolute;
 
 	&:nth-child(1){
-		transform: rotate(-90deg);
-        left: em(-20);
+        transform: translateX(-50%) rotate(-90deg);
+        left: em(30);
+        transform-origin: center;
 	}
 
 	&:nth-child(2){
-        transform: rotate(90deg);
-        right: em(-10);
+        transform: translateX(50%) rotate(90deg);
+        right: em(30);
+        transform-origin: center;
     }
     &:nth-child(3){
         bottom: em(20);

@@ -1,10 +1,13 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+const i18n = useI18n()
 
 const activeLang = ref('en')
 const langsArr = ref(['ua', 'ru'])
 
 const changeLang = (lang) => {
+	i18n.locale.value = lang
 	langsArr.value = langsArr.value.map(el => el === lang ? activeLang.value : el)
 	activeLang.value = lang
 }
@@ -34,7 +37,7 @@ const changeLang = (lang) => {
 	gap: em(15);
 	width: fit-content;
 	overflow: hidden;
-	transition: grid-template-columns ease-in-out .35s;
+	transition: grid-template-columns ease-in-out .5s;
 
 	&:hover{
 		grid-template-columns: 1fr auto;
@@ -89,7 +92,7 @@ const changeLang = (lang) => {
 			background: $bg-g;
 			text-transform: uppercase;
 			transition: all ease-in-out .35s;
-			transform: translateX(-150%);
+			transform: translateX(-100%);
 			opacity: 0;
 
 			&:hover{

@@ -17,8 +17,8 @@ const toggleMenuStatus = () => menuStatus.value = !menuStatus.value
 						</router-link>
 					</li>
 					<li class="nav-list__el" @click="toggleMenuStatus" v-for="item in ['where', 'what', 'who']" :key="item">
-						<router-link class="tx-style-1 tx-hover-anim" rel="nofollow" to="/test" :data-content="item + '?'">
-							{{ item + '?' }}
+						<router-link class="tx-style-1 tx-hover-anim" rel="nofollow" to="/test" :data-content="$t(`nav.${item}`) + '?'">
+							{{ $t(`nav.${item}`) + '?' }}
 						</router-link>
 					</li>
 				</ul>

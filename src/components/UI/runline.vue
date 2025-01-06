@@ -53,14 +53,12 @@ const runlineResize = () => {
 window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
 
-//runlineResize()
 setTimeout(() => {
 	runlineResize()
 	opacity.value = 1
 }, 2050)
 
 // onMounted(async () => {
-// 	runlineResize()
 // 	setTimeout(() => {
 // 		runlineResize()
 // 		opacity.value = 1
@@ -76,13 +74,8 @@ onUnmounted(() => {
 <template>
 	<div class="runline-wr" :style="{ opacity: opacity }">
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
-			<div class="runline__first-half">
-				<span class="runline__first-half--text">
-					{{ text }}
-				</span>
-			</div>
-			<div class="runline__second-half">
-				<span class="runline__second-half--text">
+			<div v-for="className in ['first', 'second']" :key="className" :class="`runline__${className}-half`">
+				<span :class="`runline__${className}-half--text`">
 					{{ text }}
 				</span>
 			</div>
@@ -91,8 +84,6 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-$duration: 30s;
-
 .runline-wr{
 	width: 120px;
 	position: absolute;

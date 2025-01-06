@@ -1,5 +1,6 @@
 import en from '../i18n/en.json'
 import ua from '../i18n/ua.json'
+import ru from '../i18n/ru.json'
 
 import { createI18n } from 'vue-i18n'
 
@@ -9,7 +10,8 @@ const createi18n = () => {
         legacy: false,
         messages: {
             'en': en,
-            'ua': ua
+            'ua': ua,
+            'ru': ru
         }
     })
     return i18n

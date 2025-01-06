@@ -1,10 +1,7 @@
 {
 	"nav": {
-        "where": "where",
-        "what": "what",
-        "who": "who"
-    },
-    "home": {
-        "title": "full-cycle event agency"
+        "where": "де",
+        "what": "що",
+        "who": "хто"
     }
 }
