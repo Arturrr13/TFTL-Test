@@ -53,13 +53,19 @@ const runlineResize = () => {
 window.addEventListener('resize', runlineResize)
 window.addEventListener('orientationchange', runlineResize)
 
-onMounted(async () => {
+//runlineResize()
+setTimeout(() => {
 	runlineResize()
-	setTimeout(() => {
-		runlineResize()
-		opacity.value = 1
-	}, 1050)
-})
+	opacity.value = 1
+}, 2050)
+
+// onMounted(async () => {
+// 	runlineResize()
+// 	setTimeout(() => {
+// 		runlineResize()
+// 		opacity.value = 1
+// 	}, 1050)
+// })
 
 onUnmounted(() => {
 	window.removeEventListener('resize', runlineResize)
