@@ -1,12 +1,13 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const text = ref('FULL-CYCLE EVENT AGENCY')
+const size = ref(0)
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
-	console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
+	//console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 	//runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
@@ -23,6 +24,7 @@ const runlineResize = () => {
 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
 
 	runline.style.width = `${d + d * 0.1}px`
+	size.value = d + d * 0.1
 
 	const angleInRadians = Math.atan(h / w)
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
@@ -40,6 +42,11 @@ window.addEventListener('orientationchange', runlineResize)
 // 	alert("hey!")
 // })
 
+watch(() => size.value, (value, old) => {
+    runlineResize()
+	console.log(value, old)
+})
+
 // document.addEventListener('DOMContentLoaded', () => {
 // 	runlineResize()
 // 	setTimeout(() => {
@@ -48,7 +55,7 @@ window.addEventListener('orientationchange', runlineResize)
 // 	}, 2050)
 // })
 onMounted(async () => {
-	runlineResize()
+	//runlineResize()
 	setTimeout(() => {
 		runlineResize()
 	}, 1050)
