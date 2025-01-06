@@ -40,10 +40,14 @@ window.addEventListener('orientationchange', runlineResize)
 // 	alert("hey!")
 // })
 onMounted(async () => {
-	// runlineResize()
+	runlineResize()
 	setTimeout(() => {
-		runlineResize()
-	}, 10)
+		window.resizeTo(100, 100);
+		window.resizeBy(-200, -200)
+	}, 0)
+
+	window.resizeTo(100, 100);
+	window.resizeBy(-200, -200)
 
 	// const interval = setInterval(() => {
 	// 	runlineResize()
