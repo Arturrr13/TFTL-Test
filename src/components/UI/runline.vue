@@ -1,14 +1,12 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
-const text = ref('FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY')
+const text = ref('FULL-CYCLE EVENT AGENCY')
 
 const addText = (runlineText, runlineHalf, runlineEl) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
-	//alert(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
-	console.log('lol')
-	//alert("hey!")
+	console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 	//runlineText.innerText = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
 }
@@ -24,18 +22,16 @@ const runlineResize = () => {
 
 	const d = Math.sqrt(Math.pow(w, 2) + Math.pow(h, 2))
 
-	runline.style.width = `${Math.ceil(d + d * 0.1)}px`
-	runlineEl.style.width = `${Math.ceil(d + d * 0.1)}px`
-	//alert(`${Math.ceil(d + d * 0.1)}, ${window.innerWidth}, ${window.innerHeight}`)
+	runline.style.width = `${d + d * 0.1}px`
 
 	const angleInRadians = Math.atan(h / w)
 	const angleInDegrees = angleInRadians * (180 / Math.PI)
 	runline.style.rotate = `-${angleInDegrees}deg`
 
-	// for(let i = 0; i < 2; i++){
-	// 	addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
-	// 	addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
-	// }
+	for(let i = 0; i < 2; i++){
+		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
+		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
+	}
 }
 
 window.addEventListener('resize', runlineResize)
@@ -44,10 +40,10 @@ window.addEventListener('orientationchange', runlineResize)
 // 	alert("hey!")
 // })
 onMounted(async () => {
-	runlineResize()
-	// setTimeout(() => {
-	// 	runlineResize()
-	// }, 10)
+	// runlineResize()
+	setTimeout(() => {
+		runlineResize()
+	}, 10)
 
 	// const interval = setInterval(() => {
 	// 	runlineResize()
@@ -60,14 +56,14 @@ onMounted(async () => {
 	<div class="runline-wr">
 		<div class="runline" v-for="index in 2" :key="'runline-id' + index">
 			<div class="runline__first-half">
-				<nobr class="runline__first-half--text">
+				<span class="runline__first-half--text">
 					{{ text }}
-				</nobr>
+				</span>
 			</div>
 			<div class="runline__second-half">
-				<nobr class="runline__second-half--text">
+				<span class="runline__second-half--text">
 					{{ text }}
-				</nobr>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -77,7 +73,7 @@ onMounted(async () => {
 $duration: 30s;
 
 .runline-wr{
-	width: 10px;
+	width: 120px;
 	position: absolute;
 	rotate: -30deg;
 	@include flex(column, false, false, em(15));
@@ -86,8 +82,7 @@ $duration: 30s;
 		width: 100%;
 		height: em(60);
 		position: relative;
-		@include flex(false, center, space-between, false);
-		// border: 1px solid green;
+		display: flex;
 
 		&:nth-child(1){
 			rotate: 180deg;
@@ -99,25 +94,21 @@ $duration: 30s;
   		  	right: 0;
   		  	animation: ticker 30s infinite linear forwards;
 			@include flex(false, center, center, false);
-			//width: 100%;
-			border: 1px solid blue;
   		  	transform: translate(100%, 0);
 
   		  	&--text{
 				@include text($tx-g, em(52), 700, 110%);
 				font-style: italic;
 				text-transform: uppercase;
-				//opacity: 0.1;
-				border: 1px solid red;
-				display: block;
-				// white-space: nowrap;
+				opacity: 0.1;
+				white-space: nowrap;
 				color: transparent;
 				-webkit-text-stroke: em(1) $tx-g;
 			}
   		}
 
 		&__first-half{
-			//flex-shrink: 0;
+			flex-shrink: 0;
 		}
 
 		&__second-half{
