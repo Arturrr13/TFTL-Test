@@ -4,21 +4,36 @@ import { onMounted, ref } from 'vue'
 const text = ref('FULL-CYCLE EVENT AGENCY')
 const size = ref(0)
 
-const addText = (runlineText, runlineHalf, runlineEl) => {
+const addText = (runlineText, runlineHalf, runlineEl, firstSecond) => {
 	const stringSize = runlineText.clientWidth / runlineText.innerText.split('').length * 23 // 23 def size of string "FULL-CYCLE EVENT AGENCY"
 	const timesToRepeat = Math.ceil(runlineEl / stringSize)
 	//console.log(runlineText.innerText.split('').length, runlineText.clientWidth, runlineEl)
 
 	text.value = 'FULL-CYCLE EVENT AGENCY'.repeat(timesToRepeat)
-
-	// wheel.animate([
-	//   	{ transform: `rotate(${lastSpin.value}deg)`},
-	//   	{ transform: `rotate(${rotate.value}deg)`},
-	// ], {
-	//   	duration: 1500,
-	//   	fill: 'both',
-	//   	easing: 'ease-in-out'
-	// })
+	if(firstSecond){
+		runlineHalf.animate([
+			{ transform: `translate(100%, 0)` },
+			  { transform: `translate(0, 0)` },
+			  { transform: `translate(-100%, 0)` }
+		], {
+			duration: 30000,
+			iterations: Infinity,
+			fill: 'both',
+			easing: 'linear'
+		})
+	} else {
+		runlineHalf.animate([
+			{ transform: `translate(100%, 0)` },
+			  { transform: `translate(0, 0)` },
+			  { transform: `translate(-100%, 0)` }
+		], {
+			duration: 30000,
+			delay: 15000,
+			iterations: Infinity,
+			fill: 'both',
+			easing: 'linear'
+		})
+	}
 }
 
 const runlineResize = () => {
@@ -40,8 +55,8 @@ const runlineResize = () => {
 	runline.style.rotate = `-${angleInDegrees}deg`
 
 	for(let i = 0; i < 2; i++){
-		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth)
-		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth)
+		addText(runlineText[i], runlineHalf[i], runlineEl.clientWidth, true)
+		addText(runlineTextSecond[i], runlineHalfSecond[i], runlineEl.clientWidth, false)
 	}
 }
 
@@ -53,9 +68,6 @@ onMounted(async () => {
 	setTimeout(() => {
 		runlineResize()
 	}, 1050)
-	setTimeout(() => {
-		runlineResize()
-	}, 2050)
 })
 </script>
 
@@ -115,11 +127,11 @@ $duration: 30s;
 
 		&__first-half{
 			flex-shrink: 0;
-			animation: ticker 30s infinite linear forwards;
+			//animation: ticker 30s infinite linear forwards;
 		}
 
 		&__second-half{
-			animation: 30s ticker 15s infinite linear forwards;
+			//animation: 30s ticker 15s infinite linear forwards;
 		}
 	}
 }
