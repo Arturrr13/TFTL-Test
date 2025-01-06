@@ -43,8 +43,8 @@ onMounted(async () => {
 	runlineResize()
 	setTimeout(() => {
 		runlineResize()
-		//alert("hey!")
-	}, 1050)
+		alert("hey!")
+	}, 2050)
 
 	// const interval = setInterval(() => {
 	// 	runlineResize()
