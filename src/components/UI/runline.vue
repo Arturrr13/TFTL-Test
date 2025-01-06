@@ -40,20 +40,19 @@ window.addEventListener('orientationchange', runlineResize)
 // 	alert("hey!")
 // })
 
-document.addEventListener('DOMContentLoaded', () => {
-	runlineResize()
-	setTimeout(() => {
-		runlineResize()
-		//alert("hey!")
-	}, 2050)
-})
-// onMounted(async () => {
+// document.addEventListener('DOMContentLoaded', () => {
 // 	runlineResize()
 // 	setTimeout(() => {
 // 		runlineResize()
-// 		alert("hey!")
+// 		//alert("hey!")
 // 	}, 2050)
 // })
+onMounted(async () => {
+	runlineResize()
+	setTimeout(() => {
+		runlineResize()
+	}, 1050)
+})
 </script>
 
 <template>
