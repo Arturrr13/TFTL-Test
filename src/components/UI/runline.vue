@@ -42,7 +42,8 @@ window.addEventListener('orientationchange', runlineResize)
 onMounted(async () => {
 	runlineResize()
 	setTimeout(() => {
-		alert("hey!")
+		runlineResize()
+		//alert("hey!")
 	}, 5000)
 
 	// const interval = setInterval(() => {
